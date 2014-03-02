@@ -1,0 +1,61 @@
+//import org.apache.ivy.plugins.resolver.URLResolver
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+    // For newer/beta versions of Groovy
+    maven {
+        url 'http://repository.codehaus.org/'
+        url "http://repo.springsource.org/libs-milestone-s3-cache"
+    }
+}
+
+dependencies {
+    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.7'
+    groovy group: 'org.apache.ivy', name:'ivy', version:'2.2.0' 
+
+    // Using sfl4j allows us to replace different loggers later, if desired
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
+
+    // sfl4j is just a facade for loggers. To actually get logging to work, you need to
+    // tie it in with some actual implementation, e.g., logback
+    // see: http://www.slf4j.org/manual.html
+    compile group: 'ch.qos.logback', name:'logback-classic', version: '1.0.9'
+    compile group: 'ch.qos.logback', name:'logback-core', version: '1.0.9'
+}
+
+task(runHW, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'HelloWorld'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+task(runHW2, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'HelloWorld2'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+task(runMyExample, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'MyExample'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+task(runTest, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'CacheManagerTest'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+//MrHakiLogSlf4j.groovy
+task(runMrHaki, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'MrHakiLogSlf4j'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+
+task(runSpock, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'CacheManagerTestSpock'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion "1.8-rc-1"
+}
