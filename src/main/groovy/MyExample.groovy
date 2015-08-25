@@ -17,11 +17,12 @@ class MyExample {
 
     static main(args) {
         def ex = new MyExample()
-		def ct = 0
-        while(true) {
+	def ct = 0
+	def flag = true
+        while(flag) {
           ex.status(++ct)
           sleep(10000) // Sleep 30 seconds
-		  if (ct<4) ex.warn();
+	  if (ct<4) ex.warn(); else {flag = false;}
         }
     }
 }

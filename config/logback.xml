@@ -10,14 +10,14 @@
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- Daily rollover -->
-      <fileNamePattern>logs/HelloAll.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <fileNamePattern>logs/LoggingExamples.%d{yyyy-MM-dd}.log</fileNamePattern>
 
       <!-- Keep 7 days' worth of history -->
       <maxHistory>7</maxHistory>
     </rollingPolicy>
 
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg (logback.xml) %n</pattern>
+      <pattern>logback.xml %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}:%msg %n</pattern>
     </encoder>
   </appender>
 

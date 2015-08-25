@@ -5,6 +5,7 @@
 
 // actually added gradle.build dependency so dont need this grab
 
+/*
 @Grapes([
     @Grab(group='org.slf4j', module='slf4j-api', version='1.6.1'),
     @Grab(group='ch.qos.logback', module='logback-classic', version='0.9.28'),
@@ -12,7 +13,6 @@
 ])
 
 
-/*
 --> results look like:
 :runMrHaki
 17:17:21.314 [main] DEBUG HelloWorldSlf4j - Execute HelloWorld.
@@ -37,16 +37,16 @@ class HelloWorldSlf4j {
     def execute() {
         log.debug 'Execute HelloWorld.'
         log.info 'Simple sample to show log field is injected.'
-		log.error 'a severe msg'
-		log.warn 'a warning msg'
-		//log.config 'a config msg'  won't work, neither will .severe
-		println "log.getName()="+log.getName()
+	log.error 'a severe msg'
+	log.warn 'a warning msg'
+	//log.config 'a config msg will not work, neither will .severe'
+	println "log.getName()="+log.getName()
 		
-		//logger.myLogger.info "an info message from logger.myLogger.info"
-  		//logger["com.foo.bar"].info "an info message from logger['com.foo.bar'].info"
+	//logger.myLogger.info "an info message from logger.myLogger.info"
+  	//logger["com.foo.bar"].info "an info message from logger['com.foo.bar'].info"
 
-		// try other samples
-		Logger logger = LoggerFactory.getLogger("MrHakiLogSlf4j.groovy");
+	// try other samples
+	Logger logger = LoggerFactory.getLogger("MrHakiLogSlf4j.groovy");
     	logger.debug("HelloWorldSlf4j.");
     }
 }

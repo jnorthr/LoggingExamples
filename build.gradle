@@ -1,27 +1,41 @@
 //import org.apache.ivy.plugins.resolver.URLResolver
 apply plugin: 'groovy'
 
+def compatibilityVersion = 1.6
+sourceCompatibility = compatibilityVersion
+targetCompatibility = compatibilityVersion
+
+defaultTasks 'clean', 'build','test', 'runHW', 'runHW2', 'runHello', 'runHello2', 'runMrHaki', 'runMyExample', 'runTest', 'runTestH2'
+
 repositories {
     mavenCentral()
-    // For newer/beta versions of Groovy
-    maven {
-        url 'http://repository.codehaus.org/'
-        url "http://repo.springsource.org/libs-milestone-s3-cache"
-    }
+}
+
+configurations {
+    ivy
 }
 
 dependencies {
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.7'
-    groovy group: 'org.apache.ivy', name:'ivy', version:'2.2.0' 
-
+    ivy group: 'org.apache.ivy', name:'ivy', version:'2.4.0' 
+    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.4'
+    
     // Using sfl4j allows us to replace different loggers later, if desired
-    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.12'
+    
+    // to use h2 in-mem database
+    compile group:'com.h2database', name:'h2', version:'1.4.188'
 
     // sfl4j is just a facade for loggers. To actually get logging to work, you need to
     // tie it in with some actual implementation, e.g., logback
     // see: http://www.slf4j.org/manual.html
-    compile group: 'ch.qos.logback', name:'logback-classic', version: '1.0.9'
-    compile group: 'ch.qos.logback', name:'logback-core', version: '1.0.9'
+    compile group: 'ch.qos.logback', name:'logback-core', version: '1.1.3'
+    compile group:'ch.qos.logback', name:'logback-classic', version:'1.1.3'
+    runtime group: 'ch.qos.logback', name:'logback-core', version: '1.1.3'
+    runtime group:'ch.qos.logback', name:'logback-classic', version:'1.1.3'
+
+    // use features to make Spock tests happy
+    compile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    compile 'org.springframework.boot:spring-boot:1.2.1.RELEASE'
 }
 
 task(runHW, dependsOn: [compileGroovy], type: JavaExec) {
@@ -51,11 +65,26 @@ task(runMrHaki, dependsOn: [compileGroovy], type: JavaExec) {
 }
 
 
-task(runSpock, dependsOn: [compileGroovy], type: JavaExec) {
-    main = 'CacheManagerTestSpock'
+task(runHello, dependsOn: 'classes', type: JavaExec) {
+	main = 'HelloWorld'
+	classpath = sourceSets.main.runtimeClasspath
+	args 'jimbo', 'hi kids'
+	systemProperty 'simple.message', 'Hi kids '
+}
+
+task(runHello2, dependsOn: 'classes', type: JavaExec) {
+	main = 'HelloWorld2'
+	classpath = sourceSets.main.runtimeClasspath
+	args 'jimbo', 'hi kids'
+	systemProperty 'simple.message', 'Hi kids '
+}
+
+task(runTestH2, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'CacheManagerTestH2'
     classpath = sourceSets.main.runtimeClasspath + files('config/')
 }
 
+
 task wrapper(type: Wrapper) {
-    gradleVersion "1.8-rc-1"
+    gradleVersion = "2.6"
 }
