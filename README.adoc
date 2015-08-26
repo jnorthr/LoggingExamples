@@ -1,6 +1,10 @@
 = LoggingExamples
 Jim Northrop <james.northrop@orange.fr>
 
+== Status
+
+Travis Continuous Integration Server status: [![Build Status](https://travis-ci.org/jnorthr/LoggingExamples.svg?branch=master)](https://travis-ci.org/jnorthr/LoggingExamples)
+
 == Notes About Logging
 
 Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is alo one example of Spock test framework too.
