@@ -3,7 +3,7 @@ Jim Northrop <james.northrop@orange.fr>
 
 == Status
 
-Travis Continuous Integration Server status: https://travis-ci.org/jnorthr/LoggingExamples.svg?branch=master[Build Status](https://travis-ci.org/jnorthr/LoggingExamples)
+Travis Continuous Integration Server status: https://travis-ci.org/jnorthr/LoggingExamples.svg?branch=master[Build Status] and https://travis-ci.org/jnorthr/LoggingExamples[LoggingExamples]
 
 == Notes About Logging
 
