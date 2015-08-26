@@ -3,8 +3,7 @@ Jim Northrop <james.northrop@orange.fr>
 
 == Status
 
-Travis Continuous Integration Server status: 
-
+Project Health -
 image:https://img.shields.io/travis/jnorthr/LoggingExamples.svg[Build Status (Travis CI), link=https://travis-ci.org/jnorthr/LoggingExamples]
 
 == Notes About Logging
