@@ -17,7 +17,7 @@ configurations {
 
 dependencies {
     ivy group: 'org.apache.ivy', name:'ivy', version:'2.4.0' 
-    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.4'
+    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.5'
     
     // Using sfl4j allows us to replace different loggers later, if desired
     compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.12'
@@ -86,5 +86,5 @@ task(runTestH2, dependsOn: [compileGroovy], type: JavaExec) {
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = "2.6"
+    gradleVersion = "2.7"
 }
