@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.1">
-<meta name="author" content="Jim Northrop">
-<title>LoggingExamples</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400">
+<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="author" content="jnorthr">
+<title>User Guide for Logging Examples</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
-/* Remove the comments around the @import statement below when using this as a custom stylesheet */
-/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic|Noto+Serif:400,400italic,700,700italic|Droid+Sans+Mono:400";*/
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
@@ -58,7 +58,6 @@ a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
 img{-ms-interpolation-mode:bicubic}
-#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none!important}
 .left{float:left!important}
 .right{float:right!important}
 .text-left{text-align:left!important}
@@ -66,10 +65,12 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-.antialiased,body{-webkit-font-smoothing:antialiased}
-img{display:inline-block;vertical-align:middle}
+body{-webkit-font-smoothing:antialiased}
+img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
 p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
@@ -112,12 +113,14 @@ blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
-h4{font-size:1.4375em}}table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
 table thead,table tfoot{background:#f7f8f7;font-weight:bold}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
@@ -125,7 +128,7 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 *:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
 .keyseq{color:rgba(51,51,51,.8)}
-kbd{display:inline-block;color:rgba(0,0,0,.8);font-size:.75em;line-height:1.4;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:-.15em .15em 0 .15em;padding:.2em .6em .2em .5em;vertical-align:middle;white-space:nowrap}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
 .menuseq,.menu{color:rgba(0,0,0,.8)}
@@ -156,29 +159,33 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toc ul.sectlevel0>li>a{font-style:italic}
 #toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
 #toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
 #toc a{text-decoration:none}
 #toc a:active{text-decoration:underline}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media only screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
 #toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
-#toc.toc2 #toctitle{margin-top:0;font-size:1.2em}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
 #toc.toc2 ul ul{margin-left:0;padding-left:1em}
 #toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
 body.toc2.toc-right{padding-left:0;padding-right:15em}
-body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
 #toc.toc2{width:20em}
 #toc.toc2 #toctitle{font-size:1.375em}
 #toc.toc2>ul{font-size:.95em}
 #toc.toc2 ul ul{padding-left:1.25em}
-body.toc2.toc-right{padding-left:0;padding-right:20em}}#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
 #footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 .sect1{padding-bottom:.625em}
-@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}.sect1+.sect1{border-top:1px solid #efefed}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
 #content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
 #content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
 #content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
@@ -207,7 +214,9 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
 .literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
 .literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
-@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
 .listingblock pre.highlightjs{padding:0}
 .listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
 .listingblock pre.prettyprint{border-width:0}
@@ -217,7 +226,7 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
 .listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
 table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
-table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
 table.pyhltable td.code{padding-left:.75em;padding-right:0}
 pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
 pre.pygments .lineno{display:inline-block;margin-right:.25em}
@@ -238,13 +247,12 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 .verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
 .quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
 .quoteblock .attribution br,.verseblock .attribution br{display:none}
-.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.05em;color:rgba(0,0,0,.6)}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
 .quoteblock.abstract{margin:0 0 1.25em 0;display:block}
 .quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
 .quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
-table.spread{width:100%}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
 table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
 table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
@@ -275,8 +283,8 @@ dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
 ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-check-square-o:first-child,ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{position:relative;top:1px}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -290,8 +298,8 @@ ol.upperroman{list-style-type:upper-roman}
 ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table,.colist>table{border:0;background:none}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
-td.hdlist1{padding-right:.75em;font-weight:bold}
-td.hdlist1,td.hdlist2{vertical-align:top}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
 .colist>table tr>td:last-of-type{padding:.25em 0}
@@ -304,13 +312,14 @@ td.hdlist1,td.hdlist2{vertical-align:top}
 .image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
 .image.left{margin-right:.625em}
 .image.right{margin-left:.625em}
-a.image{text-decoration:none}
-span.footnote,span.footnoteref{vertical-align:super;font-size:.875em}
-span.footnote a,span.footnoteref a{text-decoration:none}
-span.footnote a:active,span.footnoteref a:active{text-decoration:underline}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
-#footnotes .footnote{padding:0 .375em;line-height:1.3;font-size:.875em;margin-left:1.2em;text-indent:-1.2em;margin-bottom:.2em}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
@@ -368,11 +377,10 @@ span.icon>.fa{cursor:default}
 pre .conum[data-value]{position:relative;top:-.125em}
 b.conum *{color:inherit!important}
 .conum:not([data-value]):empty{display:none}
-h1,h2{letter-spacing:-.01em}
-dt,th.tableblock,td.content{text-rendering:optimizeLegibility}
-p,td.content{letter-spacing:-.01em}
-p strong,td.content strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content{font-size:1.0625rem}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -383,9 +391,9 @@ a{color:inherit!important;text-decoration:underline!important}
 a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
 a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
 abbr[title]:after{content:" (" attr(title) ")"}
-pre,blockquote,tr,img{page-break-inside:avoid}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
 thead{display:table-header-group}
-img{max-width:100%!important}
+svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
@@ -409,18 +417,247 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+/*pre.CodeRay {background-color:#f7f7f8;}*/
+.CodeRay .line-numbers{border-right:1px solid #d8d8d8;padding:0 0.5em 0 .25em}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.5em;color:rgba(0,0,0,.3)}
+.CodeRay .line-numbers strong{color:rgba(0,0,0,.4)}
+table.CodeRay{border-collapse:separate;border-spacing:0;margin-bottom:0;border:0;background:none}
+table.CodeRay td{vertical-align: top;line-height:1.45}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.line-numbers>pre{padding:0;color:rgba(0,0,0,.3)}
+table.CodeRay td.code{padding:0 0 0 .5em}
+table.CodeRay td.code>pre{padding:0}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>LoggingExamples</h1>
+<h1>User Guide for Logging Examples</h1>
 <div class="details">
-<span id="author" class="author">Jim Northrop</span><br>
+<span id="author" class="author">jnorthr</span><br>
 <span id="email" class="email"><a href="mailto:james.northrop@orange.fr">james.northrop@orange.fr</a></span><br>
+<span id="revnumber">version 1.0.0-SNAPSHOT,</span>
+<span id="revdate">2016-08-03</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#build-gradle">build.gradle</a></li>
+<li><a href="#status">Status</a></li>
+<li><a href="#notes-about-logging">Notes About Logging</a>
+<ul class="sectlevel2">
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#log-file-names">Log File Names</a></li>
+</ul>
+</li>
+<li><a href="#project-construction">Project Construction</a></li>
+</ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_notes_about_logging">Notes About Logging</h2>
+<h2 id="introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hello, Logging Team using Asciidoctor and Github Pages.</p>
+</div>
+<div class="paragraph">
+<p>This page was built by the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ ./gradlew asciidoctor</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="attributes">Attributes</h2>
+<div class="sectionbody">
+<div class="dlist">
+<div class="title">Built-in</div>
+<dl>
+<dt class="hdlist1">asciidoctor-version</dt>
+<dd>
+<p>1.5.4</p>
+</dd>
+<dt class="hdlist1">safe-mode-name</dt>
+<dd>
+<p>unsafe</p>
+</dd>
+<dt class="hdlist1">docdir</dt>
+<dd>
+<p>/Users/jimnorthrop/Dropbox/Languages/Gradle/asciidoctor-gradle-examples/asciidoc-to-github-pages-example/src/docs/asciidoc</p>
+</dd>
+<dt class="hdlist1">docfile</dt>
+<dd>
+<p>/Users/jimnorthrop/Dropbox/Languages/Gradle/asciidoctor-gradle-examples/asciidoc-to-github-pages-example/src/docs/asciidoc/user-guide.adoc</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">Custom</div>
+<dl>
+<dt class="hdlist1">project-version</dt>
+<dd>
+<p>1.0.0-SNAPSHOT</p>
+</dd>
+<dt class="hdlist1">endpoint-url</dt>
+<dd>
+<p><a href="http://example.org" class="bare">http://example.org</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="build-gradle">build.gradle</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy">plugins {
+  id <span class="string"><span class="delimiter">'</span><span class="content">org.ajoberstar.github-pages</span><span class="delimiter">'</span></span> version <span class="string"><span class="delimiter">'</span><span class="content">1.1.0</span><span class="delimiter">'</span></span>
+  id <span class="string"><span class="delimiter">'</span><span class="content">org.asciidoctor.gradle.asciidoctor</span><span class="delimiter">'</span></span> version <span class="string"><span class="delimiter">'</span><span class="content">1.5.1</span><span class="delimiter">'</span></span>
+  id <span class="string"><span class="delimiter">'</span><span class="content">org.asciidoctor.convert</span><span class="delimiter">'</span></span> version <span class="string"><span class="delimiter">'</span><span class="content">1.5.3</span><span class="delimiter">'</span></span>
+}
+
+ext.githubToken = <span class="string"><span class="delimiter">&quot;</span><span class="content">4d23b6e66ca776f4a2a93670c94b294c08a44297</span><span class="delimiter">&quot;</span></span>
+
+githubPages {
+  repoUri = <span class="string"><span class="delimiter">'</span><span class="content">https://github.com/jnorthr/LoggingExamples.git</span><span class="delimiter">'</span></span>
+  <span class="comment">// Set above to the destination repo</span>
+  credentials {
+    username = project.hasProperty(<span class="string"><span class="delimiter">'</span><span class="content">githubToken</span><span class="delimiter">'</span></span>) ? project.githubToken : <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>
+    password = <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>
+  }
+
+  pages {
+    from file(asciidoctor.outputDir.path + <span class="string"><span class="delimiter">'</span><span class="content">/html5</span><span class="delimiter">'</span></span>)
+  }
+}
+
+version = <span class="string"><span class="delimiter">'</span><span class="content">1.0.0-SNAPSHOT</span><span class="delimiter">'</span></span>
+
+asciidoctorj {
+    version = <span class="string"><span class="delimiter">'</span><span class="content">1.5.4</span><span class="delimiter">'</span></span>
+}
+
+asciidoctor {
+  attributes <span class="string"><span class="delimiter">'</span><span class="content">build-gradle</span><span class="delimiter">'</span></span>: file(<span class="string"><span class="delimiter">'</span><span class="content">build.gradle</span><span class="delimiter">'</span></span>),
+                  <span class="string"><span class="delimiter">'</span><span class="content">endpoint-url</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">http://example.org</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">source-highlighter</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">coderay</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">imagesdir</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">images</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">toc</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">left</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">icons</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">font</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">setanchors</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">true</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">idprefix</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">idseparator</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">-</span><span class="delimiter">'</span></span>,
+                  <span class="string"><span class="delimiter">'</span><span class="content">docinfo1</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">true</span><span class="delimiter">'</span></span>
+}
+
+publishGhPages.dependsOn asciidoctor
+
+
+task wrapper(<span class="key">type</span>: Wrapper) {
+    gradleVersion <span class="string"><span class="delimiter">'</span><span class="content">2.14</span><span class="delimiter">'</span></span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="status">Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Project Health -
+<span class="image"><a class="image" href="https://travis-ci.org/jnorthr/LoggingExamples"><img src="https://img.shields.io/travis/jnorthr/LoggingExamples.svg" alt="Build Status (Travis CI)"></a></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="notes-about-logging">Notes About Logging</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is alo one example of Spock test framework too.</p>
@@ -429,27 +666,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When slf4j catches a log messages with a logger, that msg is given to an appender which decides what to do with the message. By default, the ConsoleAppender displays the message in the console. But it can be configured to write the msg to a file. It does this because of the configuration file.</p>
 </div>
 <div class="sect2">
-<h3 id="_configuration">Configuration</h3>
+<h3 id="configuration">Configuration</h3>
 <div class="paragraph">
 <p>Look at the <strong>config</strong> folder. You will see two configuration files. The <strong>logback.xml</strong> file is used in this set of examples.</p>
 </div>
 <div class="listingblock">
 <div class="title">XML to write each log entry to both the console and an external logging file.</div>
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">  &lt;!-- Configure so that it outputs to both console and log file --&gt;
-  &lt;root level="DEBUG"&gt;
-    &lt;appender-ref ref="FILE" /&gt;
-    &lt;appender-ref ref="STDOUT" /&gt;
-  &lt;/root&gt;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml">  <span class="comment">&lt;!-- Configure so that it outputs to both console and log file --&gt;</span>
+  <span class="tag">&lt;root</span> <span class="attribute-name">level</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">DEBUG</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;appender-ref</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">FILE</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;appender-ref</span> <span class="attribute-name">ref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">STDOUT</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;/root&gt;</span></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_log_file_names">Log File Names</h3>
+<h3 id="log-file-names">Log File Names</h3>
 <div class="listingblock">
 <div class="title">Naming Convention for Output Log Files</div>
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;fileNamePattern&gt;logs/LoggingExamples.%d{yyyy-MM-dd}.log&lt;/fileNamePattern&gt;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;fileNamePattern&gt;</span>logs/LoggingExamples.%d{yyyy-MM-dd}.log<span class="tag">&lt;/fileNamePattern&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -461,7 +698,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="title">Sample Log Entries</div>
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">logback.xml 23:58:56.186 [main] INFO  MyExample:Instantiated MyExample
+<pre class="CodeRay highlight"><code data-lang="bash">logback.xml 23:58:56.186 [main] INFO  MyExample:Instantiated MyExample
 logback.xml 23:58:56.257 [main] DEBUG MyExample:Still alive... at interation 1
 logback.xml 23:59:06.280 [main] WARN  MyExample:-- this is a warning
 logback.xml 23:59:06.281 [main] DEBUG MyExample:Still alive... at interation 2
@@ -475,7 +712,7 @@ logback.xml 23:59:26.288 [main] DEBUG MyExample:Still alive... at interation 4</
 </div>
 </div>
 <div class="sect1">
-<h2 id="_project_construction">Project Construction</h2>
+<h2 id="project-construction">Project Construction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This project uses the <strong>gradle</strong> build tool. To make it easy to play with this project, the full gradle wrapper feature is included. This means you will not need to install gradle to run this set of log tests. You only need :</p>
@@ -513,378 +750,11 @@ logback.xml 23:59:26.288 [main] DEBUG MyExample:Still alive... at interation 4</
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_sample_joblog">Sample Joblog</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">RedApple:jim /Volumes/REDUSB/LoggingExamples $ ./gradlew
-Parallel execution is an incubating feature.
-:clean
-:compileJava UP-TO-DATE
-:compileGroovy
-:processResources UP-TO-DATE
-:classes
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:compileTestGroovy
-:processTestResources UP-TO-DATE
-:testClasses
-:test
-:check
-:build
-:runHW
-Aug 26, 2015 12:43:39 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-HelloWorld.main()
-00:43:41.653 [main] INFO  HelloWorld - this is an .info msg from Hello World
-:runHW2
-Aug 26, 2015 12:43:44 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-Aug 26, 2015 12:43:45 AM java_util_logging_Logger$info$4 call
-INFO: Hello2 info logging !
-Aug 26, 2015 12:43:45 AM java_util_logging_Logger$warning$5 call
-WARNING: Hello2 warning logging !
-Aug 26, 2015 12:43:45 AM java_util_logging_Logger$severe$6 call
-SEVERE: Hello2 severe logging !
-Hello world2! - uses standard java.util.logging.Logger
-:runHello
-Aug 26, 2015 12:43:47 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-HelloWorld.main()
-00:43:49.078 [main] INFO  HelloWorld - this is an .info msg from Hello World
-:runHello2
-Aug 26, 2015 12:43:51 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-Aug 26, 2015 12:43:52 AM java_util_logging_Logger$info$4 call
-INFO: Hello2 info logging !
-Aug 26, 2015 12:43:52 AM java_util_logging_Logger$warning$5 call
-WARNING: Hello2 warning logging !
-Aug 26, 2015 12:43:52 AM java_util_logging_Logger$severe$6 call
-SEVERE: Hello2 severe logging !
-Hello world2! - uses standard java.util.logging.Logger
-:runMrHaki
-Aug 26, 2015 12:43:55 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-00:43:57.685 [main] DEBUG HelloWorldSlf4j - Execute HelloWorld.
-00:43:57.708 [main] INFO  HelloWorldSlf4j - Simple sample to show log field is injected.
-00:43:57.722 [main] ERROR HelloWorldSlf4j - a severe msg
-00:43:57.725 [main] WARN  HelloWorldSlf4j - a warning msg
-log.getName()=HelloWorldSlf4j
-00:43:57.828 [main] DEBUG MrHakiLogSlf4j.groovy - HelloWorldSlf4j.
-:runMyExample
-Aug 26, 2015 12:44:00 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-00:44:02.829 [main] INFO  MyExample - Instantiated MyExample
-00:44:03.097 [main] DEBUG MyExample - Still alive... at interation 1
-00:44:13.336 [main] WARN  MyExample - -- this is a warning
-00:44:13.338 [main] DEBUG MyExample - Still alive... at interation 2
-00:44:23.487 [main] WARN  MyExample - -- this is a warning
-00:44:23.494 [main] DEBUG MyExample - Still alive... at interation 3
-00:44:33.495 [main] WARN  MyExample - -- this is a warning
-00:44:33.496 [main] DEBUG MyExample - Still alive... at interation 4
-:runTest
-Aug 26, 2015 12:44:46 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-
-
-Hello from CacheManagerTest
-Aug 26, 2015 12:44:48 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have fred, so add
-Aug 26, 2015 12:44:48 AM java_util_logging_Logger$info$0 call
-INFO: data for fred added:true
-flag from CacheManagerTest has(fred):true
-ans from CacheManagerTest get(fred):CacheEntry(key:fred, name:Flintstone, expiry:0, startTime:1440542687, payload:null)
-ans from CacheManagerTest get(fredx):null
-Aug 26, 2015 12:44:48 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have jim, so add
-Aug 26, 2015 12:44:48 AM java_util_logging_Logger$info$0 call
-INFO: data for jim added:true
-added from CacheManagerTest put(jim):CacheEntry(key:jim, name:jimbo, expiry:66, startTime:1440542688, payload:null)
-ans from CacheManagerTest get(jim) has:CacheEntry(key:jim, name:jimbo, expiry:66, startTime:1440542688, payload:null)
-
-
-----------------
---&gt; now add key+CacheEntry
-Aug 26, 2015 12:44:48 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have eve, so add
-Aug 26, 2015 12:44:48 AM java_util_logging_Logger$info$0 call
-INFO: data for eve added:true
-put CacheEntry from CacheManagerTest put(eve):CacheEntry(key:eve, name:, expiry:0, startTime:1440542688, payload:horse feathers)
-eve looks like this:CacheEntry(key:eve, name:, expiry:0, startTime:1440542688, payload:horse feathers)
-
-
-----------------
---&gt; now add CacheEntry sam
-Aug 26, 2015 12:44:48 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have sam, so add
-Aug 26, 2015 12:44:48 AM java_util_logging_Logger$info$0 call
-INFO: data for sam added:true
-put CacheEntry from CacheManagerTest put(sam):CacheEntry(key:sam, name:, expiry:0, startTime:1440542688, payload:play it again sam!)
-sam looks like this:CacheEntry(key:sam, name:, expiry:0, startTime:1440542688, payload:play it again sam!)
-has(sam)=true
-Aug 26, 2015 12:44:48 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data has sam to remove
-Aug 26, 2015 12:44:48 AM java_util_logging_Logger$info$0 call
-INFO: data del sam removed ?true
-del(sam)=true
-Aug 26, 2015 12:44:48 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data has jim to update from map
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=key and v=&lt;jim&gt;
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=name and v=&lt;jnorthr&gt;
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=expiry and v=<b class="conum">(26)</b>
-Aug 26, 2015 12:44:49 AM java_util_logging_Logger$info$0 call
-INFO: data jim updated:CacheEntry(key:jim, name:jnorthr, expiry:26, startTime:1440542688, payload:null)
-result from CacheManagerTest fix(jim) using a map:CacheEntry(key:jim, name:jnorthr, expiry:26, startTime:1440542688, payload:null) and now contains:CacheEntry(key:jim, name:jnorthr, expiry:26, startTime:1440542688, payload:null)
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data has jim to update from map
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=key and v=&lt;jim&gt;
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=payload and v=&lt;update jim payload&gt;
-Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=expiry and v=<b class="conum">(3)</b>
-Aug 26, 2015 12:44:49 AM java_util_logging_Logger$info$0 call
-INFO: data jim updated:CacheEntry(key:jim, name:jnorthr, expiry:3, startTime:1440542688, payload:update jim payload)
-result from CacheManagerTest cmt.fix(jim)'s payload using a map:CacheEntry(key:jim, name:jnorthr, expiry:3, startTime:1440542688, payload:update jim payload)
- and now contains:CacheEntry(key:jim, name:jnorthr, expiry:3, startTime:1440542688, payload:update jim payload)
-is cache ok: ok(jim)=true
-is cache ok after 6 sec.s: ok(jim)=false
-
-
-----------------
-Show all CacheEntry :
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: [0] = fred=CacheEntry(key:fred, name:Flintstone, expiry:0, startTime:1440542687, payload:null);
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: [1] = jim=CacheEntry(key:jim, name:jnorthr, expiry:3, startTime:1440542688, payload:update jim payload);
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: [2] = eve=CacheEntry(key:eve, name:, expiry:0, startTime:1440542688, payload:horse feathers);
-
-flag from CacheManagerTest del(fred):true
-flag from CacheManagerTest del(jim):true
-Aug 26, 2015 12:44:55 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data has fred to remove
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: data del fred removed ?true
-Aug 26, 2015 12:44:55 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data has jim to remove
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: data del jim removed ?true
-ans from CacheManagerTest get(jim):null
-
-CacheManagerTest now holds:[eve:CacheEntry(key:eve, name:, expiry:0, startTime:1440542688, payload:horse feathers)]
-
----------
-Another put but this time as a CacheEntry
-
-flag from CacheManagerTest del(max):false
---- so now ce:CacheEntry(key:max, name:MaxWell, expiry:21, startTime:1440542695, payload:null)
-Aug 26, 2015 12:44:55 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have max, so add
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: data for max added:true
-added from CacheManagerTest put(max):CacheEntry(key:max, name:MaxWell, expiry:21, startTime:1440542695, payload:null)
-did max add ? ans from CacheManagerTest get(max):CacheEntry(key:max, name:MaxWell, expiry:21, startTime:1440542695, payload:null)
-Aug 26, 2015 12:44:55 AM sun.reflect.GeneratedMethodAccessor2 invoke
-INFO:
-data has max to update
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: data max updated:CacheEntry(key:max, name:, expiry:0, startTime:1440542695, payload:MaxWell's silver hammer came down on her head. Bang, bang - Maxwell's hammer made sure she was dead.)
-
-added from CacheManagerTest fix(max):CacheEntry(key:max, name:, expiry:0, startTime:1440542695, payload:MaxWell's silver hammer came down on her head. Bang, bang - Maxwell's hammer made sure she was dead.)
-did max update ? ans from CacheManagerTest get(max):CacheEntry(key:max, name:, expiry:0, startTime:1440542695, payload:MaxWell's silver hammer came down on her head. Bang, bang - Maxwell's hammer made sure she was dead.)
-
-----------
-CacheManagerTest now holds:[eve:CacheEntry(key:eve, name:, expiry:0, startTime:1440542688, payload:horse feathers), max:CacheEntry(key:max, name:, expiry:0, startTime:1440542695, payload:MaxWell's silver hammer came down on her head. Bang, bang - Maxwell's hammer made sure she was dead.)]
-
-Show all CacheEntry :
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: [0] = eve=CacheEntry(key:eve, name:, expiry:0, startTime:1440542688, payload:horse feathers);
-Aug 26, 2015 12:44:55 AM java_util_logging_Logger$info$0 call
-INFO: [1] = max=CacheEntry(key:max, name:, expiry:0, startTime:1440542695, payload:MaxWell's silver hammer came down on her head. Bang, bang - Maxwell's hammer made sure she was dead.);
-goodbye from CacheManagerTest
-:runTestH2
-Aug 26, 2015 12:44:57 AM org.codehaus.groovy.runtime.m12n.MetaInfExtensionModule newModule
-WARNING: Module [groovy-all] - Unable to load extension class [org.codehaus.groovy.runtime.NioGroovyMethods]
-
-
-
----------------------------------------------
-Hello from CacheManagerTestH2
-... loading driver
-... create cache table as H2mem data store
-Aug 26, 2015 12:45:00 AM java_util_logging_Logger$info$0 call
-INFO: ... create cache table as H2mem data store
-CacheEntry put(String fred, CacheEntry entry)
-has(String fred) ?
-found 0 rows
-flag=false
-Aug 26, 2015 12:45:01 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have fred, so add
-db.executeUpdate(inserted :fred
-has(String fred) ?
-Aug 26, 2015 12:45:01 AM java_util_logging_Logger$info$0 call
-INFO: data for fred added:true
-found 1 rows
-has(String fred) ?
-found 1 rows
-CacheEntry get(String fred)=true
-found 6 rows
-result was :class groovy.sql.GroovyRowResult
-------------------------
-
----&gt;ID=1
----&gt;KEY=fred
----&gt;NAME=Flintstone
----&gt;EXPIRY=0
----&gt;STARTTIME=1440542700
----&gt;PAYLOAD=null
------------------------------
-
-CacheEntry put(String Mary, CacheEntry entry)
-has(String Mary) ?
-found 0 rows
-Aug 26, 2015 12:45:02 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have Mary, so add
-flag=false
-Aug 26, 2015 12:45:02 AM java_util_logging_Logger$info$0 call
-INFO: data for Mary added:true
-db.executeUpdate(inserted :Mary
-has(String Mary) ?
-found 1 rows
-has(String Mary) ?
-found 1 rows
-CacheEntry get(String Mary)=true
-found 6 rows
-result was :class groovy.sql.GroovyRowResult
-------------------------
-
----&gt;ID=2
----&gt;KEY=Mary
----&gt;NAME=Flintstone.
----&gt;EXPIRY=123
----&gt;STARTTIME=345
----&gt;PAYLOAD=clob2: '&lt;html&gt;&lt;h1&gt;Mary woz ere&lt;/h1&gt;&lt;/html&gt;'
------------------------------
-
-a1 from CacheManagerTestH2 constructor get(Mary):CacheEntry(key:Mary, name:Flintstone., expiry:123, startTime:345, payload:clob2: '&lt;html&gt;&lt;h1&gt;Mary woz ere&lt;/h1&gt;&lt;/html&gt;')
-===================================
-
-
-===================================
-has(String fred) ?
-found 1 rows
-flag from CacheManagerTestH2 has(fred):true
-===================================
-has(String fred) ?
-found 1 rows
-CacheEntry get(String fred)=true
-found 6 rows
-result was :class groovy.sql.GroovyRowResult
-------------------------
-
----&gt;ID=1
----&gt;KEY=fred
----&gt;NAME=Flintstone
----&gt;EXPIRY=0
----&gt;STARTTIME=1440542700
----&gt;PAYLOAD=null
------------------------------
-
-ans from CacheManagerTestH2 get(fred):CacheEntry(key:fred, name:Flintstone, expiry:0, startTime:1440542700, payload:null)
-===================================
-has(String fredx) ?
-found 0 rows
-CacheEntry get(String fredx)=false
-ans from CacheManagerTestH2 get(fredx):null
-===================================
-CacheEntry put(String jim, Map map)
-has(String jim) ?
-found 0 rows
-Aug 26, 2015 12:45:02 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have jim, so add
-CacheEntry put(CacheEntry entry) key:jim
-CacheEntry put(String jim, CacheEntry entry)
-has(String jim) ?
-found 0 rows
-flag=false
-Aug 26, 2015 12:45:02 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO:
-data does not have jim, so add
-db.executeUpdate(inserted :jim
-has(String jim) ?
-Aug 26, 2015 12:45:02 AM java_util_logging_Logger$info$0 call
-INFO: data for jim added:true
-found 1 rows
-has(String jim) ?
-found 1 rows
-CacheEntry get(String jim)=true
-found 6 rows
-result was :class groovy.sql.GroovyRowResult
-------------------------
-
----&gt;ID=3
----&gt;KEY=jim
----&gt;NAME=jimbo
----&gt;EXPIRY=66
----&gt;STARTTIME=1440542702
----&gt;PAYLOAD=clob5: '&lt;html&gt;&lt;/html&gt;'
------------------------------
-
-has(String jim) ?
-found 1 rows
-added from CacheManagerTestH2 put(jim):CacheEntry(key:jim, name:jimbo, expiry:66, startTime:1440542702, payload:clob5: '&lt;html&gt;&lt;/html&gt;')
-has(String jim) ?
-Aug 26, 2015 12:45:02 AM java_util_logging_Logger$info$0 call
-INFO: data for jim added:true
-found 1 rows
-CacheEntry get(String jim)=true
-found 6 rows
-result was :class groovy.sql.GroovyRowResult
-------------------------
-
----&gt;ID=3
----&gt;KEY=jim
----&gt;NAME=jimbo
----&gt;EXPIRY=66
----&gt;STARTTIME=1440542702
----&gt;PAYLOAD=clob8: '&lt;html&gt;&lt;/html&gt;'
------------------------------
-
-&lt;deleted a bunch of lines here&gt;
-
-goodbye from CacheManagerTestH2
-
-BUILD SUCCESSFUL
-
-Total time: 2 mins 38.789 secs
-RedApple:jim /Volumes/REDUSB/LoggingExamples $</code></pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-08-26 00:52:46 CEST
+Version 1.0.0-SNAPSHOT<br>
+Last updated 2016-08-03 20:04:57 +02:00
 </div>
 </div>
 </body>
