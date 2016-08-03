@@ -409,6 +409,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
 </head>
 <body class="article">
 <div id="header">
@@ -420,16 +421,60 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="_status">Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Project Health -
+<span class="image"><a class="image" href="https://travis-ci.org/jnorthr/LoggingExamples"><img src="https://img.shields.io/travis/jnorthr/LoggingExamples.svg" alt="Build Status (Travis CI)"></a></span></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logback_tutorial">Logback Tutorial</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you need a brief intro to Logback and how it works with SLF4J, then <a href="http://logback.qos.ch/manual/introduction.html">see this</a>.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_notes_about_logging">Notes About Logging</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is alo one example of Spock test framework too.</p>
+<p>Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is also an example of Spock test framework too.</p>
 </div>
 <div class="paragraph">
 <p>When slf4j catches a log messages with a logger, that msg is given to an appender which decides what to do with the message. By default, the ConsoleAppender displays the message in the console. But it can be configured to write the msg to a file. It does this because of the configuration file.</p>
 </div>
+<hr>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<a href="http://tutorials.jenkov.com/java-logging/configuration.html">Jenkov has a GR8 tut about Java Logging here.</a>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_java_configuration_file">Java Configuration File</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If no configuration class is specified, you can instead specify a configuration file (but no configuration class can be specified then!).</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Java Logging API</strong> has a default logging configuration file located at <strong>"lib/logging.properties"</strong>, inside the JRE directory. If you edit this file, you edit the default logging settings for the entire JRE, for every program executed. This is most often not what you want to do, though.</p>
+</div>
 <div class="sect2">
-<h3 id="_configuration">Configuration</h3>
+<h3 id="_logback_configurations">Logback Configurations</h3>
 <div class="paragraph">
 <p>Look at the <strong>config</strong> folder. You will see two configuration files. The <strong>logback.xml</strong> file is used in this set of examples.</p>
 </div>
@@ -471,6 +516,7 @@ logback.xml 23:59:26.286 [main] WARN  MyExample:-- this is a warning
 logback.xml 23:59:26.288 [main] DEBUG MyExample:Still alive... at interation 4</code></pre>
 </div>
 </div>
+<hr>
 </div>
 </div>
 </div>
@@ -511,6 +557,7 @@ logback.xml 23:59:26.288 [main] DEBUG MyExample:Still alive... at interation 4</
 <div class="paragraph">
 <p>This sample project may teach you enough to get started doing some log messages in your own java or groovy projects. <strong>Good luck !</strong></p>
 </div>
+<hr>
 </div>
 </div>
 <div class="sect1">
@@ -642,7 +689,7 @@ INFO: ... k=key and v=&lt;jim&gt;
 Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
 INFO: ... k=name and v=&lt;jnorthr&gt;
 Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=expiry and v=<b class="conum">(26)</b>
+INFO: ... k=expiry and v=<i class="conum" data-value="26"></i><b>(26)</b>
 Aug 26, 2015 12:44:49 AM java_util_logging_Logger$info$0 call
 INFO: data jim updated:CacheEntry(key:jim, name:jnorthr, expiry:26, startTime:1440542688, payload:null)
 result from CacheManagerTest fix(jim) using a map:CacheEntry(key:jim, name:jnorthr, expiry:26, startTime:1440542688, payload:null) and now contains:CacheEntry(key:jim, name:jnorthr, expiry:26, startTime:1440542688, payload:null)
@@ -654,7 +701,7 @@ INFO: ... k=key and v=&lt;jim&gt;
 Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
 INFO: ... k=payload and v=&lt;update jim payload&gt;
 Aug 26, 2015 12:44:49 AM sun.reflect.NativeMethodAccessorImpl invoke0
-INFO: ... k=expiry and v=<b class="conum">(3)</b>
+INFO: ... k=expiry and v=<i class="conum" data-value="3"></i><b>(3)</b>
 Aug 26, 2015 12:44:49 AM java_util_logging_Logger$info$0 call
 INFO: data jim updated:CacheEntry(key:jim, name:jnorthr, expiry:3, startTime:1440542688, payload:update jim payload)
 result from CacheManagerTest cmt.fix(jim)'s payload using a map:CacheEntry(key:jim, name:jnorthr, expiry:3, startTime:1440542688, payload:update jim payload)
@@ -884,7 +931,7 @@ RedApple:jim /Volumes/REDUSB/LoggingExamples $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-08-26 00:52:46 CEST
+Last updated 2016-08-04 00:57:28 CEST
 </div>
 </div>
 </body>

@@ -1,5 +1,8 @@
 // File: LogSlf4j.groovy
 // Mr Haki's log: http://mrhaki.blogspot.fr/2011/04/groovy-goodness-inject-logging-using.html
+// another tut is: https://wiki.base22.com/display/btg/How+to+setup+SLF4J+and+LOGBack+in+a+web+app+-+fast
+// plus an intro to logback is: http://logback.qos.ch/manual/introduction.html
+
 // need to run gradle build so that log4j sees the logback.xml file
 // Add dependencies for Slf4j API and Logback
 

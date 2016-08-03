@@ -1,18 +1,39 @@
 = LoggingExamples
 Jim Northrop <james.northrop@orange.fr>
+:icons: font
 
 == Status
 
 Project Health -
 image:https://img.shields.io/travis/jnorthr/LoggingExamples.svg[Build Status (Travis CI), link=https://travis-ci.org/jnorthr/LoggingExamples]
 
+''''
+
+== Logback Tutorial
+
+If you need a brief intro to Logback and how it works with SLF4J, then http://logback.qos.ch/manual/introduction.html[see this].
+
+''''
+
 == Notes About Logging
 
-Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is alo one example of Spock test framework too.
+Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is also an example of Spock test framework too.
 
 When slf4j catches a log messages with a logger, that msg is given to an appender which decides what to do with the message. By default, the ConsoleAppender displays the message in the console. But it can be configured to write the msg to a file. It does this because of the configuration file.
 
-=== Configuration
+''''
+
+TIP: http://tutorials.jenkov.com/java-logging/configuration.html[Jenkov has a GR8 tut about Java Logging here.]
+
+''''
+
+== Java Configuration File
+
+If no configuration class is specified, you can instead specify a configuration file (but no configuration class can be specified then!).
+
+The *Java Logging API* has a default logging configuration file located at *"lib/logging.properties"*, inside the JRE directory. If you edit this file, you edit the default logging settings for the entire JRE, for every program executed. This is most often not what you want to do, though.
+
+=== Logback Configurations
 
 Look at the *config* folder. You will see two configuration files. The *logback.xml* file is used in this set of examples.
 
@@ -51,6 +72,8 @@ logback.xml 23:59:26.286 [main] WARN  MyExample:-- this is a warning
 logback.xml 23:59:26.288 [main] DEBUG MyExample:Still alive... at interation 4 
 ----
 
+''''
+
 == Project Construction
 
 This project uses the *gradle* build tool. To make it easy to play with this project, the full gradle wrapper feature is included. This means you will not need to install gradle to run this set of log tests. You only need :
@@ -70,6 +93,8 @@ The *Gradle* build tool will reach across the internet the first time it's run. 
 So run the *gradlew* wrapper and look at the results. Play with the source code files in the *src* folder. Did not have a lot of time to document what each script file does, but stick with it. Make a few changes to the groovy scripts. Add more *log.INFO* samples then try the wrapper again. 
 
 This sample project may teach you enough to get started doing some log messages in your own java or groovy projects. *Good luck !*
+
+''''
 
 == Sample Joblog
 
