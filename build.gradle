@@ -21,7 +21,9 @@ dependencies {
     
     // Using sfl4j allows us to replace different loggers later, if desired
     compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.21'
-    
+    compile group: 'log4j', name:'log4j', version: '1.2.17'
+	// better put log4j.properties in the src/main/resources folders 
+
     // to use h2 in-mem database
     compile group:'com.h2database', name:'h2', version:'1.4.188' // max vers for jdk 1.6
 
@@ -83,6 +85,18 @@ task(runTestH2, dependsOn: [compileGroovy], type: JavaExec) {
     main = 'CacheManagerTestH2'
     classpath = sourceSets.main.runtimeClasspath + files('config/')
 }
+
+task(runLS, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'LogSample'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
+//CombinedLogSample.groovy uses all log backing types but commented out
+task(runCombined, dependsOn: [compileGroovy], type: JavaExec) {
+    main = 'CombinedLogSample'
+    classpath = sourceSets.main.runtimeClasspath + files('config/')
+}
+
 
 
 task wrapper(type: Wrapper) {
