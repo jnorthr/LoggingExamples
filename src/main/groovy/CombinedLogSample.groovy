@@ -43,24 +43,23 @@ java.util.logging        @Log - only .config .fine .finer .info methods
 Log4j                    @Log4j - only works if .config file present otherwise no-op
 Apache Commons Logging   @Commons
 Slf4j API                @Slf4j - needs a backing log tool, see: http://logback.qos.ch/manual/groovy.html
-*/
 @Grapes([
     @Grab(group='org.slf4j', module='slf4j-api', version='1.6.1'),
     @Grab(group='ch.qos.logback', module='logback-classic', version='0.9.28') // failed on @Slf4j
     //@Grab('log4j:log4j:1.2.17'),
     //@GrabConfig( systemClassLoader=true )
 ])
+*/
 import org.slf4j.*
 import groovy.util.logging.Slf4j
 //import groovy.util.logging.Log
 //import groovy.util.logging.Commons  // only for @Commons logging
 //import groovy.util.logging.Log4j
-
 //import org.apache.log4j.*
  
 // Use annotation to inject log field into the class.
 @Slf4j
-class CombinedLogSample {
+class CombinedLog {
     def execute() {
         log.debug 'Execute HelloWorld.' // No such debug in @Log
         //log.fine  'Execute HelloWorld.' // Only in @Log as .config .fine .finer .info but only if settings allow > .info
@@ -68,7 +67,7 @@ class CombinedLogSample {
     }
 }
  
-def helloWorld = new CombinedLogSample()
+def helloWorld = new CombinedLog()
 println "--- Hello from CombinedLogSample ---"
 helloWorld.execute()
 println "--- the end ---"
