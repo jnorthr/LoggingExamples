@@ -17,19 +17,19 @@
  * dependency via @Grab is available at
  * http://mvnrepository.com/artifact/org.slf4j/slf4j-api/1.6.1.
  */
-@Grab(group='org.slf4j', module='slf4j-simple', version='1.6.1')
+//@Grab(group='org.slf4j', module='slf4j-simple', version='1.6.1')
 
 /*
  * An example of specifying the Log4j dependency via @Grab is at
  * http://mvnrepository.com/artifact/log4j/log4j/1.2.16.
  */
-@Grab(group='log4j', module='log4j', version='1.2.16')
+//@Grab(group='log4j', module='log4j', version='1.2.16')
 
 /*
  * An example of specifying the Apache Commons Logging dependency via @Grab is at
  * http://mvnrepository.com/artifact/commons-logging/commons-logging-api/1.1.
  */
-@Grab(group='commons-logging', module='commons-logging-api', version='1.1')
+//@Grab(group='commons-logging', module='commons-logging-api', version='1.1')
 
 
 import groovy.util.logging.Slf4j

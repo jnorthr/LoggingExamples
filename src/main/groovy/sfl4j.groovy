@@ -1,3 +1,4 @@
+/*
       @GrabResolver('https://oss.sonatype.org/content/groups/public')
 @Grapes([
       @Grab(
@@ -10,6 +11,8 @@
  @Grab('mysql:mysql-connector-java:5.1.12'),
  @GrabConfig(systemClassLoader = true)
 ])
+*/
+
 import org.slf4j.*
 import groovy.sql.*
  

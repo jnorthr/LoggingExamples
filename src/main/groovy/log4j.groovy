@@ -9,12 +9,12 @@ this Logger log = LoggerFactory.getLogger(<class>) at the top of our classes to 
 for example the Slf4j API? Since Groovy 1.8 we only have to add the@Slf4j annotation 
 to our class and get the same result. AND each invocation of a log method is 
 encapsulated in a check to see if the log level is enabled.
-*/
 
 @Grapes([
-    @Grab(group='org.slf4j', module='slf4j-api', version='1.6.1'), 
-    @Grab(group='ch.qos.logback', module='logback-classic', version='0.9.28')
+    @Grab(group='org.slf4j', module='slf4j-api', version='1.7.21'), 
+    @Grab(group='ch.qos.logback', module='logback-classic', version='1.1.7')
 ])
+*/
 
 import org.slf4j.* 
 import groovy.util.logging.Slf4j
@@ -23,7 +23,7 @@ import groovy.util.logging.Slf4j
 @Slf4j
 //@Log4j - log 4 java -  needs diff.grapes
 //@Commons - apache commons logging -  needs diff.grapes 
-class HelloWorldSlf4j
+class HiWorldSlf4j
 {
     // annotation to inject log field into the class.
     def execute() 
@@ -32,5 +32,5 @@ class HelloWorldSlf4j
     }
 } // end of class
 
-def helloWorld = new HelloWorldSlf4j() 
+def helloWorld = new HiWorldSlf4j() 
 helloWorld.execute()

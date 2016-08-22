@@ -1,9 +1,11 @@
 // File: LogSlf4j.groovy
 // Add dependencies for Slf4j API and Logback
+/*
 @Grapes([
-   @Grab(group='org.slf4j', module='slf4j-api', version='1.6.1'),
-   @Grab(group='ch.qos.logback', module='logback-classic', version='0.9.28')
+   @Grab(group='org.slf4j', module='slf4j-api', version='1.7.21'),
+   @Grab(group='ch.qos.logback', module='logback-classic', version='1.1.7')
 ])
+*/
 import groovy.util.logging.Slf4j
 
 @Slf4j

@@ -38,6 +38,9 @@ dependencies {
     // use features to make Spock tests happy
     compile 'org.spockframework:spock-core:1.0-groovy-2.4'
     compile 'org.springframework.boot:spring-boot:1.4.0.RELEASE'
+    
+    // Sfl4j MongoDB 
+    compile group:'org.mongodb', name:'mongo-java-driver', version:'2.6.5'
 }
 
 task(runHW, dependsOn: [compileGroovy], type: JavaExec) {
@@ -97,6 +100,28 @@ task(runCombined, dependsOn: [compileGroovy], type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath + files('config/')
 }
 
+task(runLS2, dependsOn: 'classes', type: JavaExec) {
+	main = 'LogSample2'
+	classpath = sourceSets.main.runtimeClasspath
+	args 'jimbo', 'hi kids'
+	systemProperty 'simple.message', 'Hi kids '
+}
+
+
+task(runSfl4j, dependsOn: 'classes', type: JavaExec) {
+	main = 'sfl4j'
+	classpath = sourceSets.main.runtimeClasspath
+	args 'jimbo', 'hi kids'
+	systemProperty 'simple.message', 'Hi kids '
+}
+
+
+task(runHi, dependsOn: 'classes', type: JavaExec) {
+	main = 'log4j'
+	classpath = sourceSets.main.runtimeClasspath
+	args 'jimbo', 'hi kids'
+	systemProperty 'simple.message', 'Hi kids '
+}
 
 
 task wrapper(type: Wrapper) {
