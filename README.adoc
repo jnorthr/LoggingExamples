@@ -1,11 +1,15 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+endif::[]
+
 = LoggingExamples
 Jim Northrop <james.northrop@orange.fr>
 :icons: font
 
 == Status
 
-Project Health -
-image:https://img.shields.io/travis/jnorthr/LoggingExamples.svg[Build Status (Travis CI), link=https://travis-ci.org/jnorthr/LoggingExamples]
+NOTE: Project Health - image:https://img.shields.io/travis/jnorthr/LoggingExamples.svg[Build Status (Travis CI), link=https://travis-ci.org/jnorthr/LoggingExamples]
 
 ''''
 
