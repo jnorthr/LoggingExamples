@@ -34,7 +34,9 @@
 
 import groovy.util.logging.Slf4j
 import groovy.util.logging.Log
-import org.apache.log4j.Level
+//import org.apache.log4j.Level
+import org.apache.log4j.*;
+//import org.apache.logging.log4j.Level
 import groovy.util.logging.Commons
 import groovy.util.logging.Log4j
 
