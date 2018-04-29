@@ -144,7 +144,7 @@ Slf4j API                @Slf4j - needs a backing log tool, see: http://logback.
 
 This project uses the *gradle* build tool. To make it easy to play with this project, the full gradle wrapper feature is included. This means you will not need to install gradle to run this set of log tests. You only need :
 
- . Java JVM 1.6 or more recent
+ . Java JVM 1.7 or more recent
  . active internet connection
  . a *Git* client to do a *git clone https://github.com/jnorthr/LoggingExamples.git* command
 
