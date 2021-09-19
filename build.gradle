@@ -5,7 +5,7 @@ def compatibilityVersion = 1.7
 sourceCompatibility = compatibilityVersion
 targetCompatibility = compatibilityVersion
 
-defaultTasks 'clean', 'build','test', 'runHW', 'runHW2', 'runHello', 'runHello2', 'runMrHaki', 'runMyExample', 'runTest', 'runTestH2'
+defaultTasks 'clean', 'build','test', 'runHW', 'runHW2', 'runHello', 'runHello2', 'runMrHaki', 'runMyExample', 'runTest'
 
 repositories {
     mavenCentral()
@@ -17,31 +17,32 @@ configurations {
 
 dependencies {
     ivy group: 'org.apache.ivy', name:'ivy', version:'2.4.0' 
-    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.14'
+    implementation group: 'org.codehaus.groovy', name: 'groovy', version: '3.0.8'
     
     // Using sfl4j allows us to replace different loggers later, if desired
-    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.25'
+    implementation group: 'org.slf4j', name:'slf4j-api', version: '1.7.25'
     //compile 'org.apache.logging.log4j:log4j:2.8.2'
-    compile group: 'log4j', name:'log4j', version: '1.2.17'
+    implementation group: 'log4j', name:'log4j', version: '1.2.17'
 	// better put log4j.properties in the src/main/resources folders 
 
     // to use h2 in-mem database
-    compile group:'com.h2database', name:'h2', version:'1.4.195' // max vers for jdk 1.6
+    implementation group:'com.h2database', name:'h2', version:'1.4.195' // max vers for jdk 1.6
 
     // sfl4j is just a facade for loggers. To actually get logging to work, you need to
     // tie it in with some actual implementation, e.g., logback
     // see: http://www.slf4j.org/manual.html
-    compile group:'ch.qos.logback', name:'logback-core', version: '1.2.2'
-    compile group:'ch.qos.logback', name:'logback-classic', version:'1.2.2'
-    runtime group:'ch.qos.logback', name:'logback-core', version: '1.2.2'
-    runtime group:'ch.qos.logback', name:'logback-classic', version:'1.2.2'
+    implementation group:'ch.qos.logback', name:'logback-core', version: '1.2.2'
+    implementation group:'ch.qos.logback', name:'logback-classic', version:'1.2.2'
+    runtimeOnly group:'ch.qos.logback', name:'logback-core', version: '1.2.2'
+    runtimeOnly group:'ch.qos.logback', name:'logback-classic', version:'1.2.2'
 
     // use features to make Spock tests happy
-    compile 'org.spockframework:spock-core:1.1-groovy-2.4'
-    compile 'org.springframework.boot:spring-boot:1.5.3.RELEASE'
+    testImplementation platform("org.spockframework:spock-bom:2.0-groovy-3.0")
+    //implementation 'org.spockframework:spock-core:1.1-groovy-2.4'
+    implementation 'org.springframework.boot:spring-boot:1.5.3.RELEASE'
     
     // Sfl4j MongoDB 
-    compile group:'org.mongodb', name:'mongo-java-driver', version:'3.4.2'
+    implementation group:'org.mongodb', name:'mongo-java-driver', version:'3.4.2'
 }
 
 task(runHW, dependsOn: [compileGroovy], type: JavaExec) {
@@ -125,6 +126,3 @@ task(runHi, dependsOn: 'classes', type: JavaExec) {
 }
 
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "4.7"
-}
