@@ -4,24 +4,25 @@ ifdef::env-github[]
 endif::[]
 
 = LoggingExamples
-Jim Northrop <james.northrop@orange.fr>
+Jim Northrop <james.b.northrop@googlemail.com>
 :icons: font
 
 == Status
 
-NOTE: Project Health - image:https://img.shields.io/travis/jnorthr/LoggingExamples.svg[Build Status (Travis CI), link=https://travis-ci.org/jnorthr/LoggingExamples]
+NOTE: Project Health - image:https://img.shields.io/travis/jnorthr/LoggingExamples.svg[Build Status in Travis CI] 
+ https://travis-ci.com/jnorthr/LoggingExamples[LoggingExamples]
 
 ''''
 
 == Logback Tutorial
 
-If you need a brief intro to Logback and how it works with SLF4J, then http://logback.qos.ch/manual/introduction.html[see this].
+If you need a brief intro to *Logback* and how it works with *SLF4J*, then http://logback.qos.ch/manual/introduction.html[see this].
 
 ''''
 
 == Notes About Logging
 
-Here are some Java and Groovy Notes and Samples to use SLF4J logs. There is also an example of Spock test framework too.
+Here are some Java and Groovy Notes and Samples to use *SLF4J* logs. There is also an example of the Spock test framework too.
 
 When slf4j catches a log messages with a logger, that msg is given to an appender which decides what to do with the message. By default, the ConsoleAppender displays the message in the console. But it can be configured to write the msg to a file. It does this because of the configuration file.
 
@@ -88,8 +89,7 @@ TIP: See File: CombinedLogSample.groovy
 
 Add dependencies for Slf4j API (and using Logback - failed as it needs config file: *File: src/main/resources/logback.groovy* )
 
-And logback is config'd by a groovy script, see: http://mrhaki.blogspot.fr/2010/09/grassroots-groovy-configure-logback.html[configure logback] or
-http://vazexqi.github.io/posts/2013/02/24/groovy-slf4j.html[this xml config] for logback.xml to an output file, so mkdir ./config at $projectDir like ./src
+And logback is config'd by a groovy script, see: http://mrhaki.blogspot.fr/2010/09/grassroots-groovy-configure-logback.html[configure logback] or http://vazexqi.github.io/posts/2013/02/24/groovy-slf4j.html[this xml config] for logback.xml to an output file, so mkdir ./config at $projectDir like ./src
 then put *logback.xml* into it with something like this: 
 
 .logback.xml
@@ -125,11 +125,12 @@ then put *logback.xml* into it with something like this:
 </configuration> 
 ====
 
-Besides an annotation for the Slf4j API other logging frameworks are supported with annotations:
+Besides an annotation for the Slf4j API, other logging frameworks are supported with annotations:
 
 .Groovy Annotation
 ----
-Logging framework        Annotation
+Logging framework ..     @Annotation
+
 java.util.logging        @Log - only .config .fine .finer .info methods
 Log4j                    @Log4j - only works if .config file present otherwise no-op
 Apache Commons Logging   @Commons

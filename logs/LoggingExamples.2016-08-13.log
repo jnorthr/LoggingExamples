@@ -1,2 +1,0 @@
-logback.xml 14:33:36.096 [main] DEBUG CombinedLog:Execute HelloWorld. 
-logback.xml 14:33:36.098 [main] INFO  CombinedLog:Simple sample to show log field is injected. 

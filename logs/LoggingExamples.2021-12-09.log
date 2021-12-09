@@ -1,0 +1,14 @@
+logback.xml 09:27:02.728 [main] INFO  HelloWorld:this is an .info msg from Hello World 
+logback.xml 09:27:09.608 [main] DEBUG HelloWorldSlf4j:Execute HelloWorld. 
+logback.xml 09:27:09.612 [main] INFO  HelloWorldSlf4j:Simple sample to show log field is injected. 
+logback.xml 09:27:09.615 [main] ERROR HelloWorldSlf4j:a severe msg 
+logback.xml 09:27:09.628 [main] WARN  HelloWorldSlf4j:a warning msg 
+logback.xml 09:27:09.691 [main] DEBUG MrHakiLogSlf4j.groovy:HelloWorldSlf4j. 
+logback.xml 09:27:11.438 [main] INFO  MyExample:Instantiated MyExample 
+logback.xml 09:27:11.566 [main] DEBUG MyExample:Still alive... at interation 1 
+logback.xml 09:27:21.611 [main] WARN  MyExample:-- this is a warning  
+logback.xml 09:27:21.616 [main] DEBUG MyExample:Still alive... at interation 2 
+logback.xml 09:27:31.616 [main] WARN  MyExample:-- this is a warning  
+logback.xml 09:27:31.617 [main] DEBUG MyExample:Still alive... at interation 3 
+logback.xml 09:27:41.618 [main] WARN  MyExample:-- this is a warning  
+logback.xml 09:27:41.619 [main] DEBUG MyExample:Still alive... at interation 4 
